@@ -6,7 +6,10 @@
   <title>Document</title>
 </head>
 <body>
-  <button onclick="openCruwiModal('PUBLIC_API_KEY')">Sube contenido y gana dinero</button>
-  <script src="./main.js"></script>
+  <button onclick="cruwiModal.open()">Abrir modal</button>
+  <script src="./main-class.js"></script>
+  <script>
+    const cruwiModal = new CruwiModal('your-api-key-here');
+  </script>
 </body>
 </html>
