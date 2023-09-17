@@ -196,14 +196,9 @@ class CruwiModal {
     this.modal.style.display = "flex";
 
     // Make the API call
-    fetch(`https://your-api.com/some-endpoint?apiKey=${apiKey}`)
-      .then((response) => response.json())
-      .then((data) => {
-        modal.querySelector("h1").innerHTML = data.title;
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+      .then(response => response.json())
+      .then(json => console.log(json))
   }
 
 }
