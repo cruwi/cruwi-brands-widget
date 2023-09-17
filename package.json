@@ -1,6 +1,6 @@
 {
   "name": "cruwi-brands-widget",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This widget is added to brand websites so that they can see their challenges and motivate their customers to do the CRUWI.com challenges and trends.",
   "main": "CruwiModal.js",
   "scripts": {

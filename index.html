@@ -1,16 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <button onclick="cruwiModal.open()">Abrir modal</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Widget development</title>
+  </head>
+  <body>
+    <!-- Production Environment -->
+    <button onclick="cruwiModal.open()">Abrir modal</button>
+    <script>
+      (function (d, w, s, id, apiKey) {
+        var js,
+          el = d.getElementsByTagName(s)[0];
 
-  <script src="./CruwiModal.js"></script>
-  <script>
-    const cruwiModal = new CruwiModal('12345678912345678912345678912345');
-  </script>
-</body>
+        if (d.getElementById(id)) {
+          return;
+        }
+
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://unpkg.com/cruwi-brands-widget@1.0.0/CruwiModal.js";
+
+        el.parentNode.insertBefore(js, el);
+
+        js.onload = function () {
+          if (typeof CruwiModal !== "undefined") {
+            w.cruwiModal = new CruwiModal(apiKey);
+            w.openCruwiModal = function () {
+              w.cruwiModal.open();
+            };
+          }
+        };
+      })(
+        document,
+        window,
+        "script",
+        "cruwi-widget",
+        "12345678912345678912345678912345"
+      );
+    </script>
+
+    <!-- Local Development -->
+    <button onclick="cruwiModal.open()">Abrir modal</button>
+    <script src="./CruwiModal.js"></script>
+    <script>
+      const cruwiModal = new CruwiModal("12345678912345678912345678912345");
+    </script>
+  </body>
 </html>
